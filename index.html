@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Quiz App</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="app">
+    <h1>Dynamic Quiz App</h1>
+
+    <!-- Setup Screen -->
+    <section id="setup">
+      <div class="card">
+        <div class="grid">
+          <label>
+            Category
+            <select id="category">
+              <option value="">Any Category</option>
+              <option value="9">General Knowledge</option>
+              <option value="18" selected>Science: Computers</option>
+              <option value="17">Science & Nature</option>
+              <option value="19">Science: Mathematics</option>
+              <option value="21">Sports</option>
+              <option value="22">Geography</option>
+              <option value="23">History</option>
+              <option value="27">Animals</option>
+            </select>
+          </label>
+
+          <label>
+            Difficulty
+            <select id="difficulty">
+              <option value="">Any</option>
+              <option value="easy">Easy</option>
+              <option value="medium" selected>Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </label>
+
+          <label>
+            Questions
+            <input id="amount" type="number" min="3" max="20" value="5"/>
+          </label>
+
+          <label>
+            Time / Question (sec)
+            <input id="seconds" type="number" min="5" max="60" value="15"/>
+          </label>
+        </div>
+
+        <button id="start-btn" class="btn primary">Start Quiz</button>
+      </div>
+    </section>
+
+    <!-- Quiz Screen -->
+    <section id="quiz" class="hide">
+      <div class="top-row">
+        <div id="q-counter">Q1 of 5</div>
+        <div id="meta"></div>
+      </div>
+
+      <div id="progress-wrap">
+        <div id="progress-bar"><span id="progress-text">100%</span></div>
+      </div>
+
+      <div id="question" class="question">Loading…</div>
+      <ul id="answers" class="answers"></ul>
+
+      <button id="next-btn" class="btn">Next</button>
+    </section>
+
+    <!-- Result Screen -->
+    <section id="result" class="hide">
+      <div class="card">
+        <h2>Your Score</h2>
+        <p id="score-line">0 / 0</p>
+        <p id="score-percent">0%</p>
+        <div class="actions">
+          <button id="restart-btn" class="btn">Restart with Same Settings</button>
+          <button id="setup-btn" class="btn outline">Back to Setup</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
